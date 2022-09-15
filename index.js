@@ -5,6 +5,8 @@ const express = require("express");
 const { default: mongoose } = require("mongoose");
 const app = express();
 
+const Person = require('./models/Person')
+
 // forma de ler json / middlewares
 app.use(
   express.urlencoded({
@@ -22,11 +24,11 @@ app.get("/", (req, res) => {
 });
 //entregar uma porta
 
-const DB_USER ='jucelio'
-const DB_PASSWORD = encodeURIComponent('juce.1981')
+const DB_USER ='MONGODB'
+const DB_PASSWORD = encodeURIComponent('7uQYfIcEc9vDkag2')
 mongoose
   .connect(
-    `mongodb+srv://${DB_USER}:${DB_PASSWORD}@apicluster0.lza2dho.mongodb.net/?retryWrites=true&w=majority `
+       `mongodb+srv://${DB_USER}:${DB_PASSWORD}@mongodbcluster0.m7ifrt4.mongodb.net/?retryWrites=true&w=majority `
   )
   .then(() => {
     console.log("Conectamos ao MongoDB!");
